@@ -2,7 +2,7 @@ import type { Application, Epoch, Input, Output } from "@cartesi/viem";
 import { useOutputs } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
 import SelectInput from "ink-select-input";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import OutputDetail from "./OutputDetail.js";
 
@@ -20,6 +20,12 @@ export default function OutputList({ application, epoch, input }: Props) {
     });
     const [selected, setSelected] = useState<Output>();
     const [focused, setFocused] = useState<Output>();
+
+    useEffect(() => {
+        if (data) {
+            setFocused(data.data[0]);
+        }
+    }, [data]);
 
     if (isLoading) return <Text>Loading outputs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;

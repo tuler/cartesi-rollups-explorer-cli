@@ -2,7 +2,7 @@ import type { Application, Epoch } from "@cartesi/viem";
 import { useEpochs } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
 import SelectInput from "ink-select-input";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import EpochDetail from "./EpochDetail.js";
 import InputList from "./InputList.js";
@@ -17,6 +17,12 @@ export default function EpochList({ application }: Props) {
     });
     const [selected, setSelected] = useState<Epoch>();
     const [focused, setFocused] = useState<Epoch>();
+
+    useEffect(() => {
+        if (data) {
+            setFocused(data.data[0]);
+        }
+    }, [data]);
 
     if (isLoading) return <Text>Loading epochs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
