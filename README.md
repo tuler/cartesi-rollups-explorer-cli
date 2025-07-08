@@ -2,6 +2,8 @@
 
 CLI tool to browse data from Cartesi Rollups RPC.
 
+![Demo of the CLI in action](demo.gif)
+
 ## Install
 
 ```bash
