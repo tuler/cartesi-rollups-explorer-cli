@@ -26,9 +26,6 @@ export default function ApplicationDetail({ application }: Props) {
             <Text>Template Hash: {chalk.cyan(application.templateHash)}</Text>
             <Text>Data Availability: {chalk.cyan(dataAvailability)}</Text>
             <Text>
-                Input Box Address: {chalk.cyan(application.inputBoxAddress)}
-            </Text>
-            <Text>
                 Epoch Length: {chalk.cyan(application.epochLength.toString())}
             </Text>
             <Text>State: {chalk.cyan(application.state)}</Text>
