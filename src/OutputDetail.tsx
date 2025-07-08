@@ -1,6 +1,7 @@
 import type { Output } from "@cartesi/viem";
 import chalk from "chalk";
 import { Box, Text } from "ink";
+// biome-ignore lint/correctness/noUnusedImports: needs React
 import React from "react";
 
 interface Props {

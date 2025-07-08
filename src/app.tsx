@@ -1,6 +1,7 @@
 import { CartesiProvider } from "@cartesi/wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Box } from "ink";
+// biome-ignore lint/correctness/noUnusedImports: needs React
 import React from "react";
 import ApplicationList from "./ApplicationList.js";
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { program } from "@commander-js/extra-typings";
 import { render } from "ink";
+// biome-ignore lint/correctness/noUnusedImports: needs React
 import React from "react";
 import App from "./app.js";
 

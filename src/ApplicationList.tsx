@@ -2,6 +2,7 @@ import type { Application } from "@cartesi/viem";
 import { useApplications } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
 import SelectInput from "ink-select-input";
+// biome-ignore lint/correctness/noUnusedImports: needs React
 import React, { useEffect, useState } from "react";
 import ApplicationDetail from "./ApplicationDetail.js";
 import EpochList from "./EpochList.js";
