@@ -9,7 +9,7 @@ interface Props {
 
 export default function InputDetail({ input }: Props) {
     return (
-        <Box borderStyle="single" flexDirection="column">
+        <Box borderStyle="single" flexDirection="column" flexGrow={1}>
             <Text>Index: {chalk.cyan(input.index.toString())}</Text>
             <Text>Status: {chalk.cyan(input.status)}</Text>
             <Text>Machine Hash: {chalk.cyan(input.machineHash || "-")}</Text>

@@ -38,7 +38,7 @@ export default function OutputList({
         : [];
 
     return (
-        <Box flexDirection="column">
+        <Box flexDirection="column" flexGrow={1}>
             <Text bold>Select Output:</Text>
             <SelectInput
                 items={[

@@ -9,7 +9,7 @@ interface Props {
 
 export default function EpochDetail({ epoch }: Props) {
     return (
-        <Box borderStyle="single" flexDirection="column">
+        <Box borderStyle="single" flexDirection="column" flexGrow={1}>
             <Text>Index: {chalk.cyan(epoch.index.toString())}</Text>
             <Text>
                 Virtual Index: {chalk.cyan(epoch.virtualIndex.toString())}

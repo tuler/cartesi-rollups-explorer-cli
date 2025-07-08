@@ -11,7 +11,7 @@ type Props = {
 export default function App({ rpcUrl }: Props) {
     const client = new QueryClient();
     return (
-        <Box>
+        <Box flexGrow={1}>
             <QueryClientProvider client={client}>
                 <CartesiProvider rpcUrl={rpcUrl}>
                     <ApplicationList />

@@ -33,7 +33,7 @@ export default function EpochList({ application, onBack }: Props) {
         : [];
 
     return (
-        <Box flexDirection="column">
+        <Box flexDirection="column" flexGrow={1}>
             {!selected && (
                 <>
                     <Text bold>Select Epoch:</Text>

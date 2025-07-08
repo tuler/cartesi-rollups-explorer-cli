@@ -34,7 +34,7 @@ export default function InputList({ application, epoch, onBack }: Props) {
         : [];
 
     return (
-        <Box flexDirection="column">
+        <Box flexDirection="column" flexGrow={1}>
             {!selected && (
                 <>
                     <Text bold>Select Input:</Text>

@@ -30,7 +30,7 @@ export default function ApplicationList() {
         : [];
 
     return (
-        <Box flexDirection="column">
+        <Box flexDirection="column" flexGrow={1}>
             {!selected && (
                 <>
                     <Text bold>Select Application:</Text>
