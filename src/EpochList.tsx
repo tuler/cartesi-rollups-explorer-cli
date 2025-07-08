@@ -16,28 +16,30 @@ export default function EpochList({ application }: Props) {
         application: application.applicationAddress,
     });
     const [selected, setSelected] = useState<Epoch>();
+    const [focused, setFocused] = useState<Epoch>();
+
     if (isLoading) return <Text>Loading epochs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
     if (!data?.data.length)
         return <Text>No epochs found for this application.</Text>;
 
     return (
-        <Box flexDirection="column" marginBottom={1}>
-            <Text bold>Epoch Details:</Text>
-            {selected && <EpochDetail epoch={selected} />}
-            <Box marginTop={1} flexDirection="column">
-                <Text bold>Select Epoch:</Text>
-                <SelectInput
-                    items={data.data.map((epoch) => ({
-                        label: `#${epoch.index.toString()} (${epoch.status})`,
-                        value: epoch,
-                    }))}
-                    onSelect={(val) => setSelected(val.value)}
-                />
+        <Box flexDirection="column">
+            <Text bold>Select Epoch:</Text>
+            <SelectInput
+                items={data.data.map((epoch) => ({
+                    label: `#${epoch.index.toString()} (${epoch.status})`,
+                    value: epoch,
+                }))}
+                onHighlight={(item) => setFocused(item.value)}
+                onSelect={(item) => setSelected(item.value)}
+            />
+            {focused && <EpochDetail epoch={focused} />}
+            <Box marginLeft={4}>
+                {selected && (
+                    <InputList application={application} epoch={selected} />
+                )}
             </Box>
-            {selected && (
-                <InputList application={application} epoch={selected} />
-            )}
         </Box>
     );
 }

@@ -9,7 +9,7 @@ interface Props {
 
 export default function OutputDetail({ output }: Props) {
     return (
-        <Box flexDirection="column" marginBottom={1}>
+        <Box borderStyle="single" flexDirection="column">
             <Text>Index: {chalk.cyan(output.index.toString())}</Text>
             <Text>
                 Created: {chalk.cyan(output.createdAt?.toISOString?.() || "-")}

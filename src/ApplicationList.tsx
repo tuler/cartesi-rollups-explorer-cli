@@ -8,35 +8,28 @@ import EpochList from "./EpochList.js";
 
 export default function ApplicationList() {
     const { data, isLoading, error } = useApplications();
+    const [focused, setFocused] = useState<Application>();
     const [selected, setSelected] = useState<Application>();
 
     if (isLoading) return <Text>Loading applications...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
     if (!data?.data.length) return <Text>No applications found.</Text>;
 
-    const items = data.data.map((application) => ({
-        label: `${application.name} (${application.applicationAddress})`,
-        value: application.applicationAddress,
-    }));
-
     return (
-        <Box flexDirection="column" marginBottom={1}>
-            <Text bold>Application Details:</Text>
-            {selected && <ApplicationDetail application={selected} />}
-            <Box marginTop={1} flexDirection="column">
-                <Text bold>Select Application:</Text>
-                <SelectInput
-                    items={items}
-                    onSelect={(val) =>
-                        setSelected(
-                            data?.data.find(
-                                (app) => app.applicationAddress === val.value,
-                            ),
-                        )
-                    }
-                />
+        <Box flexDirection="column">
+            <Text bold>Select Application:</Text>
+            <SelectInput
+                items={data.data.map((application) => ({
+                    label: `${application.name} (${application.applicationAddress})`,
+                    value: application,
+                }))}
+                onHighlight={(item) => setFocused(item.value)}
+                onSelect={(item) => setSelected(item.value)}
+            />
+            {focused && <ApplicationDetail application={focused} />}
+            <Box marginLeft={4}>
+                {selected && <EpochList application={selected} />}
             </Box>
-            {selected && <EpochList application={selected} />}
         </Box>
     );
 }

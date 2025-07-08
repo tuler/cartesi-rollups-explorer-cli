@@ -18,31 +18,35 @@ export default function InputList({ application, epoch }: Props) {
         epochIndex: epoch.index,
     });
     const [selected, setSelected] = useState<Input>();
+    const [focused, setFocused] = useState<Input>();
 
     if (isLoading) return <Text>Loading inputs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
     if (!data?.data.length) return <Text>No inputs found for this epoch.</Text>;
 
     return (
-        <Box flexDirection="column" marginBottom={1}>
-            {selected && <InputDetail input={selected} />}
-            <Box marginTop={1} flexDirection="column">
+        <Box flexDirection="column">
+            <Box flexDirection="column">
                 <Text bold>Select Input:</Text>
                 <SelectInput
                     items={data.data.map((input) => ({
                         label: `#${parseInt(input.index.toString(), 16)} (${input.status})`,
                         value: input,
                     }))}
+                    onHighlight={(item) => setFocused(item.value)}
                     onSelect={(item) => setSelected(item.value)}
                 />
             </Box>
-            {selected && (
-                <OutputList
-                    application={application}
-                    epoch={epoch}
-                    input={selected}
-                />
-            )}
+            {focused && <InputDetail input={focused} />}
+            <Box marginLeft={4}>
+                {selected && (
+                    <OutputList
+                        application={application}
+                        epoch={epoch}
+                        input={selected}
+                    />
+                )}
+            </Box>
         </Box>
     );
 }

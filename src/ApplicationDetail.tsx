@@ -9,7 +9,7 @@ interface Props {
 
 export default function ApplicationDetail({ application }: Props) {
     return (
-        <Box flexDirection="column" marginBottom={1}>
+        <Box borderStyle="single" flexDirection="column">
             <Text>Name: {chalk.cyan(application.name)}</Text>
             <Text>Address: {chalk.cyan(application.applicationAddress)}</Text>
             <Text>

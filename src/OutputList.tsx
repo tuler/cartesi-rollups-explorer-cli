@@ -19,6 +19,7 @@ export default function OutputList({ application, epoch, input }: Props) {
         inputIndex: input.index,
     });
     const [selected, setSelected] = useState<Output>();
+    const [focused, setFocused] = useState<Output>();
 
     if (isLoading) return <Text>Loading outputs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
@@ -26,17 +27,19 @@ export default function OutputList({ application, epoch, input }: Props) {
         return <Text>No outputs found for this input.</Text>;
 
     return (
-        <Box flexDirection="column" marginBottom={1}>
-            {selected && <OutputDetail output={selected} />}
-            <Box marginTop={1} flexDirection="column">
-                <Text bold>Select Output:</Text>
-                <SelectInput
-                    items={data.data.map((output) => ({
-                        label: `#${output.index.toString()} (${output.hash})`,
-                        value: output,
-                    }))}
-                    onSelect={(item) => setSelected(item.value)}
-                />
+        <Box flexDirection="column">
+            <Text bold>Select Output:</Text>
+            <SelectInput
+                items={data.data.map((output) => ({
+                    label: `#${output.index.toString()} (${output.hash})`,
+                    value: output,
+                }))}
+                onHighlight={(item) => setFocused(item.value)}
+                onSelect={(item) => setSelected(item.value)}
+            />
+            {focused && <OutputDetail output={focused} />}
+            <Box marginLeft={4}>
+                {selected && <OutputDetail output={selected} />}
             </Box>
         </Box>
     );
