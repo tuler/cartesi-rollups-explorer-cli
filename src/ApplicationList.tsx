@@ -38,7 +38,12 @@ export default function ApplicationList() {
             )}
             {focused && <ApplicationDetail application={focused} />}
             <Box marginLeft={4}>
-                {selected && <EpochList application={selected} />}
+                {selected && (
+                    <EpochList
+                        application={selected}
+                        onBack={() => setSelected(undefined)}
+                    />
+                )}
             </Box>
         </Box>
     );

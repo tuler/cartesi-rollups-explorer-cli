@@ -2,7 +2,7 @@ import type { Application, Epoch, Input } from "@cartesi/viem";
 import { useInputs } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
 import SelectInput from "ink-select-input";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import InputDetail from "./InputDetail.js";
 import OutputList from "./OutputList.js";
@@ -10,21 +10,16 @@ import OutputList from "./OutputList.js";
 interface Props {
     application: Application;
     epoch: Epoch;
+    onBack: () => void;
 }
 
-export default function InputList({ application, epoch }: Props) {
+export default function InputList({ application, epoch, onBack }: Props) {
     const { data, isLoading, error } = useInputs({
         application: application.applicationAddress,
         epochIndex: epoch.index,
     });
     const [selected, setSelected] = useState<Input>();
     const [focused, setFocused] = useState<Input>();
-
-    useEffect(() => {
-        if (data) {
-            setFocused(data.data[0]);
-        }
-    }, [data]);
 
     if (isLoading) return <Text>Loading inputs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
@@ -36,12 +31,17 @@ export default function InputList({ application, epoch }: Props) {
                 <>
                     <Text bold>Select Input:</Text>
                     <SelectInput
-                        items={data.data.map((input) => ({
-                            label: `#${parseInt(input.index.toString(), 16)} (${input.status})`,
-                            value: input,
-                        }))}
+                        items={[
+                            { label: "← Back", value: undefined },
+                            ...data.data.map((input) => ({
+                                label: `#${parseInt(input.index.toString(), 16)} (${input.status})`,
+                                value: input,
+                            })),
+                        ]}
                         onHighlight={(item) => setFocused(item.value)}
-                        onSelect={(item) => setSelected(item.value)}
+                        onSelect={(item) =>
+                            item.value ? setSelected(item.value) : onBack()
+                        }
                     />
                 </>
             )}
@@ -52,6 +52,7 @@ export default function InputList({ application, epoch }: Props) {
                         application={application}
                         epoch={epoch}
                         input={selected}
+                        onBack={() => setSelected(undefined)}
                     />
                 )}
             </Box>

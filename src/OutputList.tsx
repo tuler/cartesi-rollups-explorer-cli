@@ -2,7 +2,7 @@ import type { Application, Epoch, Input, Output } from "@cartesi/viem";
 import { useOutputs } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
 import SelectInput from "ink-select-input";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import OutputDetail from "./OutputDetail.js";
 
@@ -10,47 +10,46 @@ interface Props {
     application: Application;
     epoch: Epoch;
     input: Input;
+    onBack: () => void;
 }
 
-export default function OutputList({ application, epoch, input }: Props) {
+export default function OutputList({
+    application,
+    epoch,
+    input,
+    onBack,
+}: Props) {
     const { data, isLoading, error } = useOutputs({
         application: application.applicationAddress,
         epochIndex: epoch.index,
         inputIndex: input.index,
     });
-    const [selected, setSelected] = useState<Output>();
     const [focused, setFocused] = useState<Output>();
-
-    useEffect(() => {
-        if (data) {
-            setFocused(data.data[0]);
-        }
-    }, [data]);
 
     if (isLoading) return <Text>Loading outputs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
-    if (!data?.data.length)
-        return <Text>No outputs found for this input.</Text>;
+
+    const items = data
+        ? data.data.map((output) => ({
+              label: `#${output.index.toString()} (${output.hash})`,
+              value: output,
+          }))
+        : [];
 
     return (
         <Box flexDirection="column">
-            {!selected && (
-                <>
-                    <Text bold>Select Output:</Text>
-                    <SelectInput
-                        items={data.data.map((output) => ({
-                            label: `#${output.index.toString()} (${output.hash})`,
-                            value: output,
-                        }))}
-                        onHighlight={(item) => setFocused(item.value)}
-                        onSelect={(item) => setSelected(item.value)}
-                    />
-                </>
+            <Text bold>Select Output:</Text>
+            <SelectInput
+                items={[{ label: "← Back", value: undefined }, ...items]}
+                onHighlight={(item) => setFocused(item.value)}
+                onSelect={(item) =>
+                    item.value ? setFocused(item.value) : onBack()
+                }
+            />
+            {data?.data.length === 0 && (
+                <Text>No outputs found for this input.</Text>
             )}
             {focused && <OutputDetail output={focused} />}
-            <Box marginLeft={4}>
-                {selected && <OutputDetail output={selected} />}
-            </Box>
         </Box>
     );
 }
