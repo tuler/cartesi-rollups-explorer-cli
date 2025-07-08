@@ -8,10 +8,25 @@ interface Props {
 }
 
 export default function ApplicationDetail({ application }: Props) {
+    const da = application.dataAvailability;
+    const dataAvailability =
+        da.type === "InputBox"
+            ? `${da.type} (${da.inputBoxAddress})`
+            : da.type === "InputBoxAndEspresso"
+              ? `${da.type} (${da.namespaceId})`
+              : "";
     return (
         <Box borderStyle="single" flexDirection="column" flexGrow={1}>
             <Text>Name: {chalk.cyan(application.name)}</Text>
             <Text>Address: {chalk.cyan(application.applicationAddress)}</Text>
+            <Text>
+                Consensus Address: {chalk.cyan(application.consensusAddress)}
+            </Text>
+            <Text>Template Hash: {chalk.cyan(application.templateHash)}</Text>
+            <Text>Data Availability: {chalk.cyan(dataAvailability)}</Text>
+            <Text>
+                Input Box Address: {chalk.cyan(application.inputBoxAddress)}
+            </Text>
             <Text>
                 Epoch Length: {chalk.cyan(application.epochLength.toString())}
             </Text>
