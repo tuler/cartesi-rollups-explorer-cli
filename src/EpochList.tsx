@@ -24,6 +24,14 @@ export default function EpochList({ application, onBack }: Props) {
     if (!data?.data.length)
         return <Text>No epochs found for this application.</Text>;
 
+    const items = data
+        ? data.data.map((epoch) => ({
+              label: `#${epoch.index.toString()} (${epoch.status})`,
+              value: epoch,
+              key: epoch.index.toString(),
+          }))
+        : [];
+
     return (
         <Box flexDirection="column">
             {!selected && (
@@ -31,11 +39,8 @@ export default function EpochList({ application, onBack }: Props) {
                     <Text bold>Select Epoch:</Text>
                     <SelectInput
                         items={[
-                            { label: "← Back", value: undefined },
-                            ...data.data.map((epoch) => ({
-                                label: `#${epoch.index.toString()} (${epoch.status})`,
-                                value: epoch,
-                            })),
+                            { label: "← Back", value: undefined, key: "back" },
+                            ...items,
                         ]}
                         onHighlight={(item) => setFocused(item.value)}
                         onSelect={(item) =>

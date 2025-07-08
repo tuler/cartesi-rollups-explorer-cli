@@ -33,6 +33,7 @@ export default function OutputList({
         ? data.data.map((output) => ({
               label: `#${output.index.toString()} (${output.hash})`,
               value: output,
+              key: output.index.toString(),
           }))
         : [];
 
@@ -40,7 +41,10 @@ export default function OutputList({
         <Box flexDirection="column">
             <Text bold>Select Output:</Text>
             <SelectInput
-                items={[{ label: "← Back", value: undefined }, ...items]}
+                items={[
+                    { label: "← Back", value: undefined, key: "back" },
+                    ...items,
+                ]}
                 onHighlight={(item) => setFocused(item.value)}
                 onSelect={(item) =>
                     item.value ? setFocused(item.value) : onBack()

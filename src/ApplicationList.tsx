@@ -21,16 +21,21 @@ export default function ApplicationList() {
     if (error) return <Text color="red">Error: {error.message}</Text>;
     if (!data?.data.length) return <Text>No applications found.</Text>;
 
+    const items = data
+        ? data.data.map((application) => ({
+              label: `${application.name} (${application.applicationAddress})`,
+              value: application,
+              key: application.applicationAddress,
+          }))
+        : [];
+
     return (
         <Box flexDirection="column">
             {!selected && (
                 <>
                     <Text bold>Select Application:</Text>
                     <SelectInput
-                        items={data.data.map((application) => ({
-                            label: `${application.name} (${application.applicationAddress})`,
-                            value: application,
-                        }))}
+                        items={items}
                         onHighlight={(item) => setFocused(item.value)}
                         onSelect={(item) => setSelected(item.value)}
                     />
