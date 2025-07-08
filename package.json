@@ -6,7 +6,9 @@
     "type": "module",
     "scripts": {
         "build": "tsup",
-        "lint": "biome check"
+        "lint": "biome check",
+        "lint:ci": "biome ci",
+        "release": "tsup && changeset publish"
     },
     "dependencies": {
         "@cartesi/viem": "2.0.0-alpha.12",
@@ -21,6 +23,7 @@
     },
     "devDependencies": {
         "@biomejs/biome": "2.1.1",
+        "@changesets/cli": "^2.29.5",
         "@types/react": "^19.1.8",
         "ink-testing-library": "^4.0.0",
         "tsup": "^8.5.0",
