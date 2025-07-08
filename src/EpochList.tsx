@@ -31,15 +31,19 @@ export default function EpochList({ application }: Props) {
 
     return (
         <Box flexDirection="column">
-            <Text bold>Select Epoch:</Text>
-            <SelectInput
-                items={data.data.map((epoch) => ({
-                    label: `#${epoch.index.toString()} (${epoch.status})`,
-                    value: epoch,
-                }))}
-                onHighlight={(item) => setFocused(item.value)}
-                onSelect={(item) => setSelected(item.value)}
-            />
+            {!selected && (
+                <>
+                    <Text bold>Select Epoch:</Text>
+                    <SelectInput
+                        items={data.data.map((epoch) => ({
+                            label: `#${epoch.index.toString()} (${epoch.status})`,
+                            value: epoch,
+                        }))}
+                        onHighlight={(item) => setFocused(item.value)}
+                        onSelect={(item) => setSelected(item.value)}
+                    />
+                </>
+            )}
             {focused && <EpochDetail epoch={focused} />}
             <Box marginLeft={4}>
                 {selected && (

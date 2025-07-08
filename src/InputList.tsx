@@ -32,17 +32,19 @@ export default function InputList({ application, epoch }: Props) {
 
     return (
         <Box flexDirection="column">
-            <Box flexDirection="column">
-                <Text bold>Select Input:</Text>
-                <SelectInput
-                    items={data.data.map((input) => ({
-                        label: `#${parseInt(input.index.toString(), 16)} (${input.status})`,
-                        value: input,
-                    }))}
-                    onHighlight={(item) => setFocused(item.value)}
-                    onSelect={(item) => setSelected(item.value)}
-                />
-            </Box>
+            {!selected && (
+                <>
+                    <Text bold>Select Input:</Text>
+                    <SelectInput
+                        items={data.data.map((input) => ({
+                            label: `#${parseInt(input.index.toString(), 16)} (${input.status})`,
+                            value: input,
+                        }))}
+                        onHighlight={(item) => setFocused(item.value)}
+                        onSelect={(item) => setSelected(item.value)}
+                    />
+                </>
+            )}
             {focused && <InputDetail input={focused} />}
             <Box marginLeft={4}>
                 {selected && (

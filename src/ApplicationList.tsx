@@ -23,15 +23,19 @@ export default function ApplicationList() {
 
     return (
         <Box flexDirection="column">
-            <Text bold>Select Application:</Text>
-            <SelectInput
-                items={data.data.map((application) => ({
-                    label: `${application.name} (${application.applicationAddress})`,
-                    value: application,
-                }))}
-                onHighlight={(item) => setFocused(item.value)}
-                onSelect={(item) => setSelected(item.value)}
-            />
+            {!selected && (
+                <>
+                    <Text bold>Select Application:</Text>
+                    <SelectInput
+                        items={data.data.map((application) => ({
+                            label: `${application.name} (${application.applicationAddress})`,
+                            value: application,
+                        }))}
+                        onHighlight={(item) => setFocused(item.value)}
+                        onSelect={(item) => setSelected(item.value)}
+                    />
+                </>
+            )}
             {focused && <ApplicationDetail application={focused} />}
             <Box marginLeft={4}>
                 {selected && <EpochList application={selected} />}

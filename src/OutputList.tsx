@@ -34,15 +34,19 @@ export default function OutputList({ application, epoch, input }: Props) {
 
     return (
         <Box flexDirection="column">
-            <Text bold>Select Output:</Text>
-            <SelectInput
-                items={data.data.map((output) => ({
-                    label: `#${output.index.toString()} (${output.hash})`,
-                    value: output,
-                }))}
-                onHighlight={(item) => setFocused(item.value)}
-                onSelect={(item) => setSelected(item.value)}
-            />
+            {!selected && (
+                <>
+                    <Text bold>Select Output:</Text>
+                    <SelectInput
+                        items={data.data.map((output) => ({
+                            label: `#${output.index.toString()} (${output.hash})`,
+                            value: output,
+                        }))}
+                        onHighlight={(item) => setFocused(item.value)}
+                        onSelect={(item) => setSelected(item.value)}
+                    />
+                </>
+            )}
             {focused && <OutputDetail output={focused} />}
             <Box marginLeft={4}>
                 {selected && <OutputDetail output={selected} />}
