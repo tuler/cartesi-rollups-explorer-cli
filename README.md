@@ -2,6 +2,12 @@
 
 CLI tool to browse data from Cartesi Rollups RPC.
 
+## Run
+
+```shell
+npx @tuler/cartesi-rollups-explorer-cli
+```
+
 ![Demo of the CLI in action](demo.gif)
 
 ## Install
