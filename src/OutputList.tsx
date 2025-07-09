@@ -1,11 +1,11 @@
 import type { Application, Epoch, Input, Output } from "@cartesi/viem";
 import { useOutputs } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
-import SelectInput from "ink-select-input";
 // biome-ignore lint/correctness/noUnusedImports: needs React
 import React, { useState } from "react";
 
 import OutputDetail from "./OutputDetail.js";
+import PaginatedSelectInput from "./PaginatedSelectInput.js";
 
 interface Props {
     application: Application;
@@ -20,37 +20,37 @@ export default function OutputList({
     input,
     onBack,
 }: Props) {
+    const [offset, setOffset] = useState(0);
     const { data, isLoading, error } = useOutputs({
         application: application.applicationAddress,
         epochIndex: epoch.index,
         inputIndex: input.index,
+        offset,
     });
     const [focused, setFocused] = useState<Output>();
 
     if (isLoading) return <Text>Loading outputs...</Text>;
     if (error) return <Text color="red">Error: {error.message}</Text>;
 
-    const items = data
-        ? data.data.map((output) => ({
-              label: `#${output.index.toString()} (${output.hash})`,
-              value: output,
-              key: output.index.toString(),
-          }))
-        : [];
-
     return (
         <Box flexDirection="column" flexGrow={1}>
-            <Text bold>Select Output:</Text>
-            <SelectInput
-                items={[
-                    { label: "← Back", value: undefined, key: "back" },
-                    ...items,
-                ]}
-                onHighlight={(item) => setFocused(item.value)}
-                onSelect={(item) =>
-                    item.value ? setFocused(item.value) : onBack()
-                }
-            />
+            {data && (
+                <>
+                    <Text bold>Select Output:</Text>
+                    <PaginatedSelectInput
+                        data={data}
+                        keyFn={(output) => output.index.toString()}
+                        labelFn={(output) =>
+                            `#${output.index.toString()} (${output.decodedData.type})`
+                        }
+                        onBack={onBack}
+                        onNext={() => setOffset(offset + data.pagination.limit)}
+                        onPrev={() => setOffset(offset - data.pagination.limit)}
+                        onSelect={setFocused}
+                        onHighlight={setFocused}
+                    />
+                </>
+            )}
             {data?.data.length === 0 && (
                 <Text>No outputs found for this input.</Text>
             )}

@@ -1,14 +1,16 @@
 import type { Application } from "@cartesi/viem";
 import { useApplications } from "@cartesi/wagmi";
 import { Box, Text } from "ink";
-import SelectInput from "ink-select-input";
 // biome-ignore lint/correctness/noUnusedImports: needs React
 import React, { useEffect, useState } from "react";
+
 import ApplicationDetail from "./ApplicationDetail.js";
 import EpochList from "./EpochList.js";
+import PaginatedSelectInput from "./PaginatedSelectInput.js";
 
 export default function ApplicationList() {
-    const { data, isLoading, error } = useApplications();
+    const [offset, setOffset] = useState(0);
+    const { data, isLoading, error } = useApplications({ offset });
     const [focused, setFocused] = useState<Application>();
     const [selected, setSelected] = useState<Application>();
 
@@ -22,23 +24,21 @@ export default function ApplicationList() {
     if (error) return <Text color="red">Error: {error.message}</Text>;
     if (!data?.data.length) return <Text>No applications found.</Text>;
 
-    const items = data
-        ? data.data.map((application) => ({
-              label: `${application.name} (${application.applicationAddress})`,
-              value: application,
-              key: application.applicationAddress,
-          }))
-        : [];
-
     return (
         <Box flexDirection="column" flexGrow={1}>
             {!selected && (
                 <>
                     <Text bold>Select Application:</Text>
-                    <SelectInput
-                        items={items}
-                        onHighlight={(item) => setFocused(item.value)}
-                        onSelect={(item) => setSelected(item.value)}
+                    <PaginatedSelectInput
+                        data={data}
+                        keyFn={(application) => application.applicationAddress}
+                        labelFn={(application) =>
+                            `${application.name} (${application.applicationAddress})`
+                        }
+                        onNext={() => setOffset(offset + data.pagination.limit)}
+                        onPrev={() => setOffset(offset - data.pagination.limit)}
+                        onSelect={setSelected}
+                        onHighlight={setFocused}
                     />
                 </>
             )}
