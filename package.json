@@ -14,7 +14,7 @@
         "@cartesi/viem": "2.0.0-alpha.12",
         "@cartesi/wagmi": "2.0.0-alpha.12",
         "@commander-js/extra-typings": "^14.0.0",
-        "@tanstack/react-query": "^5.81.5",
+        "@tanstack/react-query": "^5.83.0",
         "chalk": "^5.2.0",
         "commander": "^14.0.0",
         "ink": "^6.0.1",
