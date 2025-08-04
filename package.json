@@ -17,7 +17,7 @@
         "@tanstack/react-query": "^5.81.5",
         "chalk": "^5.2.0",
         "commander": "^14.0.0",
-        "ink": "^6.0.1",
+        "ink": "^6.1.0",
         "ink-select-input": "^6.2.0",
         "react": "^19.1.0"
     },
