@@ -37,8 +37,8 @@ importers:
         version: 19.1.0
     devDependencies:
       '@biomejs/biome':
-        specifier: 2.1.1
-        version: 2.1.1
+        specifier: 2.2.2
+        version: 2.2.2
       '@changesets/cli':
         specifier: ^2.29.5
         version: 2.29.5
@@ -68,55 +68,59 @@ packages:
     resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
     engines: {node: '>=6.9.0'}
 
-  '@biomejs/biome@2.1.1':
-    resolution: {integrity: sha512-HFGYkxG714KzG+8tvtXCJ1t1qXQMzgWzfvQaUjxN6UeKv+KvMEuliInnbZLJm6DXFXwqVi6446EGI0sGBLIYng==}
+  '@babel/runtime@7.28.3':
+    resolution: {integrity: sha512-9uIQ10o0WGdpP6GDhXcdOJPJuDgFtIDtN/9+ArJQ2NAfAmiuhTQdzkaTGR33v43GYS2UrSA0eX2pPPHoFVvpxA==}
+    engines: {node: '>=6.9.0'}
+
+  '@biomejs/biome@2.2.2':
+    resolution: {integrity: sha512-j1omAiQWCkhuLgwpMKisNKnsM6W8Xtt1l0WZmqY/dFj8QPNkIoTvk4tSsi40FaAAkBE1PU0AFG2RWFBWenAn+w==}
     engines: {node: '>=14.21.3'}
     hasBin: true
 
-  '@biomejs/cli-darwin-arm64@2.1.1':
-    resolution: {integrity: sha512-2Muinu5ok4tWxq4nu5l19el48cwCY/vzvI7Vjbkf3CYIQkjxZLyj0Ad37Jv2OtlXYaLvv+Sfu1hFeXt/JwRRXQ==}
+  '@biomejs/cli-darwin-arm64@2.2.2':
+    resolution: {integrity: sha512-6ePfbCeCPryWu0CXlzsWNZgVz/kBEvHiPyNpmViSt6A2eoDf4kXs3YnwQPzGjy8oBgQulrHcLnJL0nkCh80mlQ==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [darwin]
 
-  '@biomejs/cli-darwin-x64@2.1.1':
-    resolution: {integrity: sha512-cC8HM5lrgKQXLAK+6Iz2FrYW5A62pAAX6KAnRlEyLb+Q3+Kr6ur/sSuoIacqlp1yvmjHJqjYfZjPvHWnqxoEIA==}
+  '@biomejs/cli-darwin-x64@2.2.2':
+    resolution: {integrity: sha512-Tn4JmVO+rXsbRslml7FvKaNrlgUeJot++FkvYIhl1OkslVCofAtS35MPlBMhXgKWF9RNr9cwHanrPTUUXcYGag==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [darwin]
 
-  '@biomejs/cli-linux-arm64-musl@2.1.1':
-    resolution: {integrity: sha512-/7FBLnTswu4jgV9ttI3AMIdDGqVEPIZd8I5u2D4tfCoj8rl9dnjrEQbAIDlWhUXdyWlFSz8JypH3swU9h9P+2A==}
+  '@biomejs/cli-linux-arm64-musl@2.2.2':
+    resolution: {integrity: sha512-/MhYg+Bd6renn6i1ylGFL5snYUn/Ct7zoGVKhxnro3bwekiZYE8Kl39BSb0MeuqM+72sThkQv4TnNubU9njQRw==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
 
-  '@biomejs/cli-linux-arm64@2.1.1':
-    resolution: {integrity: sha512-tw4BEbhAUkWPe4WBr6IX04DJo+2jz5qpPzpW/SWvqMjb9QuHY8+J0M23V8EPY/zWU4IG8Ui0XESapR1CB49Q7g==}
+  '@biomejs/cli-linux-arm64@2.2.2':
+    resolution: {integrity: sha512-JfrK3gdmWWTh2J5tq/rcWCOsImVyzUnOS2fkjhiYKCQ+v8PqM+du5cfB7G1kXas+7KQeKSWALv18iQqdtIMvzw==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
 
-  '@biomejs/cli-linux-x64-musl@2.1.1':
-    resolution: {integrity: sha512-kUu+loNI3OCD2c12cUt7M5yaaSjDnGIksZwKnueubX6c/HWUyi/0mPbTBHR49Me3F0KKjWiKM+ZOjsmC+lUt9g==}
+  '@biomejs/cli-linux-x64-musl@2.2.2':
+    resolution: {integrity: sha512-ZCLXcZvjZKSiRY/cFANKg+z6Fhsf9MHOzj+NrDQcM+LbqYRT97LyCLWy2AS+W2vP+i89RyRM+kbGpUzbRTYWig==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
 
-  '@biomejs/cli-linux-x64@2.1.1':
-    resolution: {integrity: sha512-3WJ1GKjU7NzZb6RTbwLB59v9cTIlzjbiFLDB0z4376TkDqoNYilJaC37IomCr/aXwuU8QKkrYoHrgpSq5ffJ4Q==}
+  '@biomejs/cli-linux-x64@2.2.2':
+    resolution: {integrity: sha512-Ogb+77edO5LEP/xbNicACOWVLt8mgC+E1wmpUakr+O4nKwLt9vXe74YNuT3T1dUBxC/SnrVmlzZFC7kQJEfquQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
 
-  '@biomejs/cli-win32-arm64@2.1.1':
-    resolution: {integrity: sha512-vEHK0v0oW+E6RUWLoxb2isI3rZo57OX9ZNyyGH701fZPj6Il0Rn1f5DMNyCmyflMwTnIQstEbs7n2BxYSqQx4Q==}
+  '@biomejs/cli-win32-arm64@2.2.2':
+    resolution: {integrity: sha512-wBe2wItayw1zvtXysmHJQoQqXlTzHSpQRyPpJKiNIR21HzH/CrZRDFic1C1jDdp+zAPtqhNExa0owKMbNwW9cQ==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [win32]
 
-  '@biomejs/cli-win32-x64@2.1.1':
-    resolution: {integrity: sha512-i2PKdn70kY++KEF/zkQFvQfX1e8SkA8hq4BgC+yE9dZqyLzB/XStY2MvwI3qswlRgnGpgncgqe0QYKVS1blksg==}
+  '@biomejs/cli-win32-x64@2.2.2':
+    resolution: {integrity: sha512-DAuHhHekGfiGb6lCcsT4UyxQmVwQiBCBUMwVra/dcOSs9q8OhfaZgey51MlekT3p8UwRqtXQfFuEJBhJNdLZwg==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
@@ -398,11 +402,11 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@lit-labs/ssr-dom-shim@1.3.0':
-    resolution: {integrity: sha512-nQIWonJ6eFAvUUrSlwyHDm/aE8PBDu5kRpL0vHMg6K8fK3Diq1xdPjTnsJSwxABhaZ+5eBi1btQB5ShUTKo4nQ==}
+  '@lit-labs/ssr-dom-shim@1.4.0':
+    resolution: {integrity: sha512-ficsEARKnmmW5njugNYKipTm4SFnbik7CXtoencDZzmzo/dQ+2Q0bgkzJuoJP20Aj0F+izzJjOqsnkd6F/o1bw==}
 
-  '@lit/reactive-element@2.1.0':
-    resolution: {integrity: sha512-L2qyoZSQClcBmq0qajBVbhYEcG6iK0XfLn66ifLe/RfC0/ihpc+pl0Wdn8bJ8o+hj38cG0fGXRgSS20MuXn7qA==}
+  '@lit/reactive-element@2.1.1':
+    resolution: {integrity: sha512-N+dm5PAYdQ8e6UlywyyrgI2t++wFGXfHx+dSJ1oBrg6FAxUj40jId++EaRm80MKX5JnlH1sBsyZ5h0bcZKemCg==}
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -500,6 +504,10 @@ packages:
 
   '@noble/curves@1.9.2':
     resolution: {integrity: sha512-HxngEd2XUcg9xi20JkwlLCtYwfoFw4JGkuZpT+WlsPD4gB/cxkvTD8fSsoAnphGZhFdZYKeQIPCuFlWPm1uE0g==}
+    engines: {node: ^14.21.3 || >=16}
+
+  '@noble/curves@1.9.7':
+    resolution: {integrity: sha512-gbKGcRUYIjA3/zCCNaWDciTMFI0dCkvou3TL8Zmy5Nc7sJ47a0jtOeZoTaMxkuqRo9cRhjOdZJXegxYE5FN/xw==}
     engines: {node: ^14.21.3 || >=16}
 
   '@noble/hashes@1.4.0':
@@ -931,8 +939,8 @@ packages:
   bn.js@5.2.2:
     resolution: {integrity: sha512-v2YAxEmKaBLahNwE1mjp4WON6huMNeuDvagFZW+ASCuA/ku0bXR9hSMw0XpiqMoA3+rmnyck/tPRSFQkoC9Cuw==}
 
-  bowser@2.11.0:
-    resolution: {integrity: sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==}
+  bowser@2.12.1:
+    resolution: {integrity: sha512-z4rE2Gxh7tvshQ4hluIT7XcFrgLIQaw9X3A+kTTRdovCz5PMukm/0QC/BKSYPj3omF5Qfypn9O/c5kgpmvYUCw==}
 
   brace-expansion@2.0.2:
     resolution: {integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==}
@@ -1347,8 +1355,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  h3@1.15.3:
-    resolution: {integrity: sha512-z6GknHqyX0h9aQaTx22VZDf6QyZn+0Nh+Ym8O/u0SGSkyF5cuTJYKlc8MkzW3Nzf9LE1ivcpmYC3FUGpywhuUQ==}
+  h3@1.15.4:
+    resolution: {integrity: sha512-z5cFQWDffyOe4vQ9xIqNfCZdV4p//vy6fBnr8Q1AWnVZ0teurKMG66rLj++TKwKPUP3u7iMUvrvKaEUiQw2QWQ==}
 
   has-property-descriptors@1.0.2:
     resolution: {integrity: sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg==}
@@ -1551,11 +1559,11 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lit-element@4.2.0:
-    resolution: {integrity: sha512-MGrXJVAI5x+Bfth/pU9Kst1iWID6GHDLEzFEnyULB/sFiRLgkd8NPK/PeeXxktA3T6EIIaq8U3KcbTU5XFcP2Q==}
+  lit-element@4.2.1:
+    resolution: {integrity: sha512-WGAWRGzirAgyphK2urmYOV72tlvnxw7YfyLDgQ+OZnM9vQQBQnumQ7jUJe6unEzwGU3ahFOjuz1iz1jjrpCPuw==}
 
-  lit-html@3.3.0:
-    resolution: {integrity: sha512-RHoswrFAxY2d8Cf2mm4OZ1DgzCoBKUKSPvA1fhtSELxUERq2aQQ2h05pO9j81gS1o7RIRJ+CePLogfyahwmynw==}
+  lit-html@3.3.1:
+    resolution: {integrity: sha512-S9hbyDu/vs1qNrithiNyeyv64c9yqiW9l+DBgI18fL+MTvOtWoFR0FWiyq1TxaYef5wNlpEmzlXoBlZEO+WjoA==}
 
   lit@3.3.0:
     resolution: {integrity: sha512-DGVsqsOIHBww2DqnuZzW7QsuCdahp50ojuDaBPC7jUDRpYoH0z7kHBBYZewRzer75FwtrkmkKk7iOAwSaWdBmw==}
@@ -1638,8 +1646,8 @@ packages:
   node-addon-api@2.0.2:
     resolution: {integrity: sha512-Ntyt4AIXyaLIuMHF6IOoTakB3K+RWxwtsHNRxllEoA6vPwP9o4866g6YWDLUdnucilZhmkxiHwHr11gAENw+QA==}
 
-  node-fetch-native@1.6.6:
-    resolution: {integrity: sha512-8Mc2HhqPdlIfedsuZoc3yioPuzp6b+L5jRCRY1QzuWZh2EGJVQrGppC6V6cF0bLdbW0+O2YpqCA25aF/1lvipQ==}
+  node-fetch-native@1.6.7:
+    resolution: {integrity: sha512-g9yhqoedzIUm0nTnTqAQvueMPVOuIY16bqgAJJC8XOOubYFNwz6IER9qs0Gq2Xd0+CecCKFjtdDTMA4u4xG06Q==}
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -1654,8 +1662,8 @@ packages:
     resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
     hasBin: true
 
-  node-mock-http@1.0.1:
-    resolution: {integrity: sha512-0gJJgENizp4ghds/Ywu2FCmcRsgBTmRQzYPZm61wy+Em2sBarSka0OhQS5huLBg6od1zkNpnWMCZloQDFVvOMQ==}
+  node-mock-http@1.0.2:
+    resolution: {integrity: sha512-zWaamgDUdo9SSLw47we78+zYw/bDr5gH8pH7oRRs8V3KmBtu8GLgGIbV2p/gRPd3LWpEOpjQj7X1FOU3VFMJ8g==}
 
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
@@ -1827,8 +1835,8 @@ packages:
       yaml:
         optional: true
 
-  preact@10.26.9:
-    resolution: {integrity: sha512-SSjF9vcnF27mJK1XyFMNJzFd5u3pQiATFqoaDy03XuN00u4ziveVVEGt5RKJrDR8MHE/wJo9Nnad56RLzS2RMA==}
+  preact@10.27.1:
+    resolution: {integrity: sha512-V79raXEWch/rbqoNc7nT9E4ep7lu+mI3+sBmfRD4i1M73R3WLYcCtdI0ibxGVf4eQL8ZIz2nFacqEC+rmnOORQ==}
 
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
@@ -2013,6 +2021,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spawndamnit@3.0.1:
     resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
@@ -2179,8 +2188,8 @@ packages:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
 
-  unstorage@1.16.0:
-    resolution: {integrity: sha512-WQ37/H5A7LcRPWfYOrDa1Ys02xAbpPJq6q5GkO88FBXVSQzHd7+BjEwfRqyaSWCv9MbsJy058GWjjPjcJ16GGA==}
+  unstorage@1.17.0:
+    resolution: {integrity: sha512-l9Z7lBiwtNp8ZmcoZ/dmPkFXFdtEdZtTZafCSnEIj3YvtkXeGAtL2rN8MQFy/0cs4eOLpuRJMp9ivdug7TCvww==}
     peerDependencies:
       '@azure/app-configuration': ^1.8.0
       '@azure/cosmos': ^4.2.0
@@ -2190,10 +2199,11 @@ packages:
       '@azure/storage-blob': ^12.26.0
       '@capacitor/preferences': ^6.0.3 || ^7.0.0
       '@deno/kv': '>=0.9.0'
-      '@netlify/blobs': ^6.5.0 || ^7.0.0 || ^8.1.0
+      '@netlify/blobs': ^6.5.0 || ^7.0.0 || ^8.1.0 || ^9.0.0 || ^10.0.0
       '@planetscale/database': ^1.19.0
       '@upstash/redis': ^1.34.3
       '@vercel/blob': '>=0.27.1'
+      '@vercel/functions': ^2.2.12
       '@vercel/kv': ^1.0.1
       aws4fetch: ^1.0.20
       db0: '>=0.2.1'
@@ -2224,6 +2234,8 @@ packages:
       '@upstash/redis':
         optional: true
       '@vercel/blob':
+        optional: true
+      '@vercel/functions':
         optional: true
       '@vercel/kv':
         optional: true
@@ -2469,39 +2481,41 @@ snapshots:
 
   '@babel/runtime@7.27.6': {}
 
-  '@biomejs/biome@2.1.1':
+  '@babel/runtime@7.28.3': {}
+
+  '@biomejs/biome@2.2.2':
     optionalDependencies:
-      '@biomejs/cli-darwin-arm64': 2.1.1
-      '@biomejs/cli-darwin-x64': 2.1.1
-      '@biomejs/cli-linux-arm64': 2.1.1
-      '@biomejs/cli-linux-arm64-musl': 2.1.1
-      '@biomejs/cli-linux-x64': 2.1.1
-      '@biomejs/cli-linux-x64-musl': 2.1.1
-      '@biomejs/cli-win32-arm64': 2.1.1
-      '@biomejs/cli-win32-x64': 2.1.1
+      '@biomejs/cli-darwin-arm64': 2.2.2
+      '@biomejs/cli-darwin-x64': 2.2.2
+      '@biomejs/cli-linux-arm64': 2.2.2
+      '@biomejs/cli-linux-arm64-musl': 2.2.2
+      '@biomejs/cli-linux-x64': 2.2.2
+      '@biomejs/cli-linux-x64-musl': 2.2.2
+      '@biomejs/cli-win32-arm64': 2.2.2
+      '@biomejs/cli-win32-x64': 2.2.2
 
-  '@biomejs/cli-darwin-arm64@2.1.1':
+  '@biomejs/cli-darwin-arm64@2.2.2':
     optional: true
 
-  '@biomejs/cli-darwin-x64@2.1.1':
+  '@biomejs/cli-darwin-x64@2.2.2':
     optional: true
 
-  '@biomejs/cli-linux-arm64-musl@2.1.1':
+  '@biomejs/cli-linux-arm64-musl@2.2.2':
     optional: true
 
-  '@biomejs/cli-linux-arm64@2.1.1':
+  '@biomejs/cli-linux-arm64@2.2.2':
     optional: true
 
-  '@biomejs/cli-linux-x64-musl@2.1.1':
+  '@biomejs/cli-linux-x64-musl@2.2.2':
     optional: true
 
-  '@biomejs/cli-linux-x64@2.1.1':
+  '@biomejs/cli-linux-x64@2.2.2':
     optional: true
 
-  '@biomejs/cli-win32-arm64@2.1.1':
+  '@biomejs/cli-win32-arm64@2.2.2':
     optional: true
 
-  '@biomejs/cli-win32-x64@2.1.1':
+  '@biomejs/cli-win32-x64@2.2.2':
     optional: true
 
   '@cartesi/rpc@2.0.0-alpha.8':
@@ -2680,7 +2694,7 @@ snapshots:
       eth-json-rpc-filters: 6.0.1
       eventemitter3: 5.0.1
       keccak: 3.0.4
-      preact: 10.26.9
+      preact: 10.27.1
       sha.js: 2.4.12
     transitivePeerDependencies:
       - supports-color
@@ -2690,7 +2704,7 @@ snapshots:
       '@noble/hashes': 1.8.0
       clsx: 1.2.1
       eventemitter3: 5.0.1
-      preact: 10.26.9
+      preact: 10.27.1
 
   '@commander-js/extra-typings@14.0.0(commander@14.0.0)':
     dependencies:
@@ -2821,11 +2835,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
 
-  '@lit-labs/ssr-dom-shim@1.3.0': {}
+  '@lit-labs/ssr-dom-shim@1.4.0': {}
 
-  '@lit/reactive-element@2.1.0':
+  '@lit/reactive-element@2.1.1':
     dependencies:
-      '@lit-labs/ssr-dom-shim': 1.3.0
+      '@lit-labs/ssr-dom-shim': 1.4.0
 
   '@manypkg/find-root@1.1.0':
     dependencies:
@@ -2883,7 +2897,7 @@ snapshots:
 
   '@metamask/onboarding@1.0.1':
     dependencies:
-      bowser: 2.11.0
+      bowser: 2.12.1
 
   '@metamask/providers@16.1.0':
     dependencies:
@@ -2934,13 +2948,13 @@ snapshots:
 
   '@metamask/sdk@0.32.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)':
     dependencies:
-      '@babel/runtime': 7.27.6
+      '@babel/runtime': 7.28.3
       '@metamask/onboarding': 1.0.1
       '@metamask/providers': 16.1.0
       '@metamask/sdk-communication-layer': 0.32.0(cross-fetch@4.1.0)(eciesjs@0.4.15)(eventemitter2@6.4.9)(readable-stream@3.6.2)(socket.io-client@4.8.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@metamask/sdk-install-modal-web': 0.32.0
       '@paulmillr/qr': 0.2.1
-      bowser: 2.11.0
+      bowser: 2.12.1
       cross-fetch: 4.1.0
       debug: 4.4.1
       eciesjs: 0.4.15
@@ -3019,6 +3033,10 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.8.0
 
+  '@noble/curves@1.9.7':
+    dependencies:
+      '@noble/hashes': 1.8.0
+
   '@noble/hashes@1.4.0': {}
 
   '@noble/hashes@1.7.0': {}
@@ -3077,6 +3095,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3112,6 +3131,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3151,6 +3171,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3186,6 +3207,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3223,6 +3245,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3276,6 +3299,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3388,7 +3412,7 @@ snapshots:
 
   '@scure/bip32@1.7.0':
     dependencies:
-      '@noble/curves': 1.9.2
+      '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       '@scure/base': 1.2.6
 
@@ -3461,6 +3485,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3521,6 +3546,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3564,6 +3590,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3606,6 +3633,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3669,7 +3697,7 @@ snapshots:
     dependencies:
       '@walletconnect/safe-json': 1.0.2
       idb-keyval: 6.2.2
-      unstorage: 1.16.0(idb-keyval@6.2.2)
+      unstorage: 1.17.0(idb-keyval@6.2.2)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -3683,6 +3711,7 @@ snapshots:
       - '@planetscale/database'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - db0
@@ -3735,6 +3764,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3770,6 +3800,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3806,6 +3837,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - db0
@@ -3834,6 +3866,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - db0
@@ -3868,6 +3901,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3907,6 +3941,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3951,6 +3986,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -3994,6 +4030,7 @@ snapshots:
       - '@react-native-async-storage/async-storage'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
@@ -4075,7 +4112,7 @@ snapshots:
 
   bn.js@5.2.2: {}
 
-  bowser@2.11.0: {}
+  bowser@2.12.1: {}
 
   brace-expansion@2.0.2:
     dependencies:
@@ -4205,7 +4242,7 @@ snapshots:
 
   date-fns@2.30.0:
     dependencies:
-      '@babel/runtime': 7.27.6
+      '@babel/runtime': 7.28.3
 
   dayjs@1.11.13: {}
 
@@ -4264,7 +4301,7 @@ snapshots:
     dependencies:
       '@ecies/ciphers': 0.2.4(@noble/ciphers@1.3.0)
       '@noble/ciphers': 1.3.0
-      '@noble/curves': 1.9.2
+      '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
 
   emoji-regex@10.4.0: {}
@@ -4515,14 +4552,14 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  h3@1.15.3:
+  h3@1.15.4:
     dependencies:
       cookie-es: 1.2.2
       crossws: 0.3.5
       defu: 6.1.4
       destr: 2.0.5
       iron-webcrypto: 1.2.1
-      node-mock-http: 1.0.1
+      node-mock-http: 1.0.2
       radix3: 1.1.2
       ufo: 1.6.1
       uncrypto: 0.1.3
@@ -4712,21 +4749,21 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lit-element@4.2.0:
+  lit-element@4.2.1:
     dependencies:
-      '@lit-labs/ssr-dom-shim': 1.3.0
-      '@lit/reactive-element': 2.1.0
-      lit-html: 3.3.0
+      '@lit-labs/ssr-dom-shim': 1.4.0
+      '@lit/reactive-element': 2.1.1
+      lit-html: 3.3.1
 
-  lit-html@3.3.0:
+  lit-html@3.3.1:
     dependencies:
       '@types/trusted-types': 2.0.7
 
   lit@3.3.0:
     dependencies:
-      '@lit/reactive-element': 2.1.0
-      lit-element: 4.2.0
-      lit-html: 3.3.0
+      '@lit/reactive-element': 2.1.1
+      lit-element: 4.2.1
+      lit-html: 3.3.1
 
   load-tsconfig@0.2.5: {}
 
@@ -4792,7 +4829,7 @@ snapshots:
 
   node-addon-api@2.0.2: {}
 
-  node-fetch-native@1.6.6: {}
+  node-fetch-native@1.6.7: {}
 
   node-fetch@2.7.0:
     dependencies:
@@ -4800,7 +4837,7 @@ snapshots:
 
   node-gyp-build@4.8.4: {}
 
-  node-mock-http@1.0.1: {}
+  node-mock-http@1.0.2: {}
 
   normalize-path@3.0.0: {}
 
@@ -4815,7 +4852,7 @@ snapshots:
   ofetch@1.4.1:
     dependencies:
       destr: 2.0.5
-      node-fetch-native: 1.6.6
+      node-fetch-native: 1.6.7
       ufo: 1.6.1
 
   on-exit-leak-free@0.2.0: {}
@@ -4835,7 +4872,7 @@ snapshots:
   ox@0.6.7(typescript@5.8.3)(zod@3.22.4):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.9.2
+      '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
@@ -4850,7 +4887,7 @@ snapshots:
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/ciphers': 1.3.0
-      '@noble/curves': 1.9.2
+      '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
@@ -4955,7 +4992,7 @@ snapshots:
     dependencies:
       lilconfig: 3.1.3
 
-  preact@10.26.9: {}
+  preact@10.27.1: {}
 
   prettier@2.8.8: {}
 
@@ -5325,14 +5362,14 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  unstorage@1.16.0(idb-keyval@6.2.2):
+  unstorage@1.17.0(idb-keyval@6.2.2):
     dependencies:
       anymatch: 3.1.3
       chokidar: 4.0.3
       destr: 2.0.5
-      h3: 1.15.3
+      h3: 1.15.4
       lru-cache: 10.4.3
-      node-fetch-native: 1.6.6
+      node-fetch-native: 1.6.7
       ofetch: 1.4.1
       ufo: 1.6.1
     optionalDependencies:
@@ -5433,6 +5470,7 @@ snapshots:
       - '@types/react'
       - '@upstash/redis'
       - '@vercel/blob'
+      - '@vercel/functions'
       - '@vercel/kv'
       - aws4fetch
       - bufferutil
